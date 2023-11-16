@@ -1,0 +1,45 @@
+.card {
+    width: 190px;
+    height: 254px;
+    background-image: url("verde.jpg");
+    background-size: 450px;
+    border: 2px solid #1b5e58;
+    border-radius: 20px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Pacifico';
+    display: grid;
+}
+  
+.card:hover {
+    color: #022c24;
+    box-shadow: 2px 2px 15px #225457 inset;
+}
+  
+.h2{
+    font-size: 25px;
+    left: 25px;
+    position: relative;
+    color:#000000;
+    top:215px
+}
+.img{
+    position: relative;
+    /* z-index:1; */
+    border-radius: 50%;
+    width: 150px; 
+    height: 150px;
+    top:-450px;
+    left:35px;
+    border: 1px solid black;
+   
+}
+
+.name{
+    position: relative;
+    font-size: 30px;
+    top:215px;
+    left: 30px;
+}
+

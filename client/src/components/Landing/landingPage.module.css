@@ -1,0 +1,59 @@
+.paises{
+    display: flex;
+}
+
+
+.img{
+    transform: rotate(90deg);
+    margin-left: 600px;
+    z-index: 1;
+    position: absolute;
+    height: 700px;
+    top:190px;
+}
+
+.image{
+    transform: rotate(190deg);
+    height: 900px;
+    margin-left:150px;
+    width:1250px;
+    margin-top:70px
+}
+
+.boton{
+    position: absolute;
+    z-index:1;
+    /* top: 780px; */
+    top: 790px;
+    right:1445px;
+    transform: translate(-50%, -50%);
+    background-color: rgb(220, 225, 225);
+}
+.ima{
+    position: absolute;
+    height: 340px;
+    left:-100px;
+    top:-90px
+}
+.im{
+    position: absolute;
+    height: 120px;
+    left:380px;
+    top:730px
+}
+
+.titulo{
+    margin-top:350px;
+    font-size: 70px;
+    margin-left:-30px;
+    font-family: 'Crimson Text', serif;
+    color: rgb(7, 93, 126);
+}
+.explicacion{
+    position: relative;
+    margin-left:-30px;
+    margin-top: -20px;
+    font-size:30px;
+    font-family:'Crimson Text', serif;
+    color: black
+}
