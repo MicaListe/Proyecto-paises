@@ -3,6 +3,11 @@ import {useEffect} from "react"
 import {useDispatch, useSelector} from "react-redux"
 import { getCountriesID } from "../../redux/actions"
 import styles from "./detail.module.css"
+import mancha from "../../assets/mancha2.jpg"
+import avion from "./avion.png"
+import hojas from "./hojas.png"
+import maleta from "./maleta2.png"
+import palmera from "./palmera.png"
 
 export default function Detail(){
 
@@ -21,18 +26,21 @@ export default function Detail(){
                     <div  >
                         <img className={styles.img} src={country.flags} alt="Image not found"></img>
                     </div> 
-                    {/* <div  className={styles.background}>
-                        <img className={styles.bandera} src={mancha}></img>
-                    </div> */}
-                    {/* <div  className={styles.background1}>
-                        <img className={styles.bandera1} src={bandera1}></img>
+                    <div  className={styles.background}>
+                        <img className={styles.mancha} src={mancha}></img>
+                    </div>
+                    <div  className={styles.background1}>
+                        <img className={styles.avion} src={avion}></img>
                     </div> 
                     <div  className={styles.background2}>
-                        <img className={styles.bandera1} src={bandera2}></img>
+                        <img className={styles.hojas} src={hojas}></img>
                     </div> 
                     <div  className={styles.background3}>
-                        <img className={styles.bandera1} src={bandera3}></img>
-                    </div>  */}
+                        <img className={styles.maleta} src={maleta}></img>
+                    </div> 
+                    <div  className={styles.background3}>
+                        <img className={styles.palmera} src={palmera}></img>
+                    </div>
                     <div className={styles.textTitle}> 
                         <h2>{country.name}</h2>
                     </div>
@@ -41,7 +49,6 @@ export default function Detail(){
                         <p><b>Name: </b>{country.name}</p>
                         <p><b>Continent: </b>{country.continents}</p>
                         <p><b>Capital: </b>{country.capital}</p>
-                        <p><b>Subregion: </b>{country.subregion}</p>
                         <p><b>Area: </b>{country.area}</p>
                         <p><b>Population: </b>{country.population}</p>
                     </div>
@@ -50,9 +57,9 @@ export default function Detail(){
                         <ul className={styles.actividades}>
                             {country.activities.map((activity) => (
                                 <div>
-                                    <h2>Tourist activities</h2>
+                                    <h2 className={styles.nameAct}>Tourist activities</h2>
                                     <p><b>Name: </b>{activity.name}</p>
-                                    <p><b>Difficulty: </b>{activity.dfficulty}</p>
+                                    <p><b>Difficulty: </b>{activity.difficulty}</p>
                                     <p><b>Duration: </b>{activity.duration}</p>
                                     <p><b>Season: </b>{activity.season}</p>
                                 </div>    

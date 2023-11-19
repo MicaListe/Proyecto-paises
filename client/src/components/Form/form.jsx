@@ -2,8 +2,8 @@ import {useState, useEffect} from "react"
 import { createActivity, getCountries } from "../../redux/actions"
 import { useDispatch,useSelector } from "react-redux"
 import styles from "./form.module.css"
-// import Filtros from "../Filtros/Filter"
 import Validation from "./Validation"
+import fotos from "./fotos.png"
 
 export default function Form(){
     const dispatch= useDispatch()
@@ -19,8 +19,7 @@ export default function Form(){
     const [nombre,setNombre]= useState("")
     const ciudades= useSelector((state)=>state.filtered)
     const [errors, setErrors]= useState({})
-    console.log("lug", lugares)
-
+  
     useEffect(()=>{
         dispatch(getCountries())
     },[dispatch])
@@ -87,51 +86,65 @@ export default function Form(){
    
     return(
         <form onSubmit={handleSubmit}>
-            <div>
-                <label htmlFor="Nombre">Name</label>
-                <input placeholder="Name" type="text" name="name" value={nombre} onChange={handleName}></input>
-                <span>{errors.name}</span>
-            </div>
+            <div className={styles.card}>
+                <div className={styles.cardHeader}>
+                    <h2 className={styles.tick}>TICKET!</h2>
+                </div>
+                <div className={styles.cardBody}></div>
+                
+                <div className={styles.form}>
+                    <div className={styles.nombre}>
+                        <label htmlFor="Nombre">Name: </label>
+                        <input className={styles.input} placeholder="Name" type="text" name="name" value={nombre} onChange={handleName}></input>
+                        <span className={styles.n}>{errors.name}</span> 
+                    </div>
+                    
+                </div>
 
-            <div>
-                <label htmlFor="Dificultad">Difficulty</label>
-                <select id="Temporada" onChange={handleDifficulty}>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
-                <span>{errors.difficulty}</span>
-            </div>
-
-            <div>
-                <label htmlFor="Duracion">Duration in hours</label>
-                <input placeholder="Duration" type="number" step= "0.1" name="duration" value={lugares.duration} onChange={handleDuration}></input>
-                <span>{errors.duration}</span>
-            </div>
-
-            <div>
-                <label htmlFor="Temporada">Season</label>
-                 <select id="Temporada" onChange={handleSeason}>
-                    <option value="Primavera">Spring</option>
-                    <option value="Verano">Summer</option>
-                    <option value="Otoño">Autumm</option>
-                    <option value="Invierno">Winter</option>
-                </select>
-                <span>{errors.season}</span>
-            </div>
-            <div>
-                 <label htmlFor="seleccionar">Select country</label>
-                    <select id="seleccionar" onChange={handleSelect} required>
-                        {ciudades.map(e => (
-                            <option key={e.name} value={e.name}>{e.name}</option>
-                        ))}
+                <div className={styles.dificultad}>
+                    <label htmlFor="Dificultad">Difficulty: </label>
+                    <select className={styles.input} id="Temporada" onChange={handleDifficulty}>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
                     </select>
+                    <span className={styles.n}>{errors.difficulty}</span>
+                </div>
+
+                <div className={styles.duracion}>
+                    <label htmlFor="Duracion">Duration (hours): </label>
+                    <input className={styles.input} placeholder="Duration" type="number" step= "0.1" name="duration" value={lugares.duration} onChange={handleDuration}></input>
+                    <span className={styles.n}>{errors.duration}</span>
+                </div>
+
+                <div className={styles.temporada}>
+                    <label htmlFor="Temporada">Season: </label>
+                    <select className={styles.input} id="Temporada" onChange={handleSeason}>
+                        <option value="Primavera">Spring</option>
+                        <option value="Verano">Summer</option>
+                        <option value="Otoño">Autumm</option>
+                        <option value="Invierno">Winter</option>
+                    </select>
+                    <span className={styles.n}>{errors.season}</span>
+                </div>
+                <div className={styles.paises}>
+                    <label htmlFor="seleccionar">Select country: </label>
+                        <select className={styles.input} id="seleccionar" onChange={handleSelect} required>
+                            {ciudades.map(e => (
+                                <option key={e.name} value={e.name}>{e.name}</option>
+                            ))}
+                        </select>
+                </div>
+                <div>
+                    <img className={styles.fotos} src={fotos}></img>
+                </div>
+                
+                <button className={styles.boton} type="submit">Create</button>
+                
             </div>
-            <div>
-                <button type="submit">Create</button>
-            </div>
+            
         </form>
     )
 }

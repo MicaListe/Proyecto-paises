@@ -7,7 +7,6 @@ export default function Country({id,name,flags,continents}){
         <div className={styles.card}>
             <div>
                 <Link to={`/detail/${id}`}><h1 className={styles.name}>{name}</h1></Link>
-                {/* <h2 className={styles.continente}>Continente:</h2> */}
                 <h2 className={styles.h2}>{continents}</h2>
             </div>
             <div>

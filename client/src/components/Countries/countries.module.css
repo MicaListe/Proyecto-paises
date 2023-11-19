@@ -51,3 +51,12 @@
 .hola{
   color: black;
 }
+.boton{
+  background-color: transparent;
+  border: 1px solid black;
+  color:black;
+  height: 35px;
+}
+.loading{
+  color: black;
+}

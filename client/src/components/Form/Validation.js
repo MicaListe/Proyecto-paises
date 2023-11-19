@@ -21,17 +21,17 @@ export default function Validation(inputs) {
     }
 
     // Verificar si la dificultad está definida y es un número
-    if (!inputs.dificulty || typeof inputs.dificulty !== 'number') {
-        errors.dificulty = 'Dificulty is required and must be a number';
-    } else if (!regexDificulty.test(String(inputs.dificulty))) {
-        errors.dificulty = 'Dificulty is invalid';
+    if (!inputs.difficulty || typeof inputs.difficulty !== 'number') {
+        errors.difficulty = 'Difficulty is required';
+    } else if (!regexDificulty.test(String(inputs.difficulty))) {
+        errors.difficulty = 'Difficulty is invalid';
     } else {
-        errors.dificulty = '';
+        errors.difficulty = '';
     }
 
    
     if (!inputs.duration || typeof inputs.duration !== 'number') {
-        errors.duration = 'Duration is required and must be a number';
+        errors.duration = 'Duration is required';
     } else if (!regexDuration.test(String(inputs.duration))) {
         errors.duration = 'Duration is invalid';
     } else {
@@ -41,15 +41,16 @@ export default function Validation(inputs) {
    
     if (!inputs.season || typeof inputs.season !== 'string' || inputs.season.length === 0) {
         errors.season = 'Season is required';
-    } else {
-        if (inputs.season.length > 9) {
-            errors.season = 'Season cannot be more than 9 characters';
-        } else if (!regexSeason.test(inputs.season)) {
-            errors.season = 'Season is invalid';
-        } else {
-            errors.season = '';
-        }
     }
+    // } else {
+    //     if (inputs.season.length > 9) {
+    //         errors.season = 'Season cannot be more than 9 characters';
+    //     } else if (!regexSeason.test(inputs.season)) {
+    //         errors.season = 'Season is invalid';
+    //     } else {
+    //         errors.season = '';
+    //     }
+    // }
 
     return errors;
 }

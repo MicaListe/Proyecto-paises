@@ -1,0 +1,118 @@
+
+.card {
+    display: grid;
+    width: 300px;
+    border-radius: 10px;
+    margin-top: 80px;
+    margin-right: 900px;
+    background: #f6f2d7;
+    overflow: hidden;
+}
+.cardHeader {
+    height: 70px;
+    border: 2px solid #836602;
+    border-bottom: 2px dotted #836602;
+    border-radius: 10px 10px 0 0;
+    position: relative;
+}
+.cardHeader:before, .cardHeader:after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background: #fff;
+    border-radius: 100%;
+    bottom: -12px;
+    border: 2px solid #836602;
+    box-sizing: border-box;
+}
+.cardHeader:before { 
+    left: -13px;
+}
+.cardHeader:after {
+    right: -13px;
+}
+.cardBody {
+    height: 400px;
+    border: 2px solid #836602;
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+}
+
+.nombre{
+    position: relative;
+    color:black;
+    margin-top:-360px;
+    margin-right: 50px
+}
+
+.dificultad{
+    position: relative;
+    color: black;
+    margin-top:-300px;
+    margin-right: 35px
+}
+.duracion{
+    position: relative;
+    color: black;
+    margin-top:-235px; 
+    margin-right: -25px
+}
+.temporada{
+    position: relative;
+    color: black;
+    margin-top:-170px;
+    margin-right: 50px
+}
+.paises{
+    position: relative;
+    color: black;
+    margin-top:-108px;
+}
+.boton{
+    position: relative;
+    margin-top:-50px;
+    background-color: transparent;
+    color:black;
+    width: 100px;
+    height: 40px;
+    margin-left: 100px;
+    border: 1px solid #836602
+}
+.tick{
+    color: #836602;
+}
+.n{
+    color: black;
+    position: absolute;
+    top:25px;
+    right: 100px;
+}
+
+.input{
+    border-radius: 5px;
+    height: 20px;
+    width: 100px;
+    background-color: #eae4ba;
+    color: black;
+    border: 1px solid
+}
+.fotos{
+    position: absolute;
+    top:150px;
+    height: 800px;
+    left:900px
+}
+
+/* .surf{
+    position: absolute;
+    top:540px;
+    right:1500px
+}
+
+.caminata{
+    position: absolute;
+    height: 500px;
+    top:520px;
+    left:1320px
+} */
