@@ -48,7 +48,7 @@ export default function Countries() {
 
   return (
     <div className={styles.filtro}>
-      {loading && <p className={styles.loading}>Cargando...</p>}
+      {loading && <span className={styles.loader}></span>}
       {!loading && (
         <div className={styles.FlexContainer}>
           <Filtros activities={activities} setActivities={setActivities} />
