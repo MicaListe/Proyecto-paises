@@ -46,7 +46,9 @@ const reducer = (state = initialState, action)=>{
                 };
             }
   
-            const filteredCountriesByActivity = state.countriess.filter(
+            return{
+                ...state,
+                filtered:state.countriess.filter(
                 (country) => {
                     const activities = country.activities || [];
                     return activities.some(
@@ -54,12 +56,10 @@ const reducer = (state = initialState, action)=>{
                         activity.name.toLowerCase() === act.toLowerCase()
                     );
                 }
-            );
+                )
+            }  
    
-            return {
-                ...state,
-                filtered: filteredCountriesByActivity , 
-            };
+            
              
         case FILTER_CONTINENT:
             const filter= state.countriess.filter((c)=>c.continents=== action.payload)

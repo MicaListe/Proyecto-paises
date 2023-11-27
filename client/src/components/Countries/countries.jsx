@@ -53,7 +53,7 @@ export default function Countries() {
       {loading && <span className={styles.loader}></span>}
       {!loading && (
         <div className={styles.FlexContainer}>
-          <Filtros/>
+          <Filtros page={page} setPage={setPage}/>
           {current.map((element) => (
             <Country
               key={element.id}

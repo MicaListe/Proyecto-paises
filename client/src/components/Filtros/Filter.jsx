@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import styles from "./filter.module.css"
 
 
-export default function Filtros(){
+export default function Filtros({page, setPage}){
     const dispatch= useDispatch()
     const [selectedCountry, setSelectedCountry]= useState([])
     const activity= useSelector((state)=>state.actividad)
@@ -17,6 +17,8 @@ export default function Filtros(){
     const handleActChange= async(e)=>{
         try{
             await dispatch(filter_activities(e.target.value))
+            setPage(1)
+          
         }catch(error){
             console.error(error)
         }
