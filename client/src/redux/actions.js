@@ -7,6 +7,7 @@ export const GET_ACTIVITIES= "GET_ACTIVITIES"
 export const ORDER_BYNAME= "ORDER_BYNAME"
 export const ORDER_POPULATION= "ORDER_POPULATION"
 export const CREATE_ACTIVITY= "CREATE_ACTIVITY"
+export const CLEAR_COUNTRIES= "CLEAR_COUNTRIES"
 
 export function getCountries(){
     return async function (dispatch){
@@ -18,16 +19,12 @@ export function getCountries(){
     }
 }
 
-// export function getCountriesID(id){
-//     return async function(dispatch){
-//         let json= await axios(`http://localhost:3001/countries/${id}`)
-//         console.log("json",json)
-//         return dispatch({
-//             type: "COUNTRY_ID",
-//             payload: json.data
-//         })
-//     }
-// }
+export function clearCountries(){
+    return {
+        type:CLEAR_COUNTRIES
+    }
+}
+
 export function getCountriesID(id){
     return async function(dispatch){
         let json= await axios(`http://localhost:3001/countries/${id}`)

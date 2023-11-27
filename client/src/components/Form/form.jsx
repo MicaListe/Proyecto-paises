@@ -4,6 +4,8 @@ import { useDispatch,useSelector } from "react-redux"
 import styles from "./form.module.css"
 import Validation from "./Validation"
 import fotos from "./fotos.png"
+import { useNavigate } from "react-router-dom"
+import flecha from "./flecha.png"
 
 export default function Form(){
     const dispatch= useDispatch()
@@ -19,6 +21,8 @@ export default function Form(){
     const [nombre,setNombre]= useState("")
     const ciudades= useSelector((state)=>state.filtered)
     const [errors, setErrors]= useState({})
+    const navigate=useNavigate()
+  
   
     useEffect(()=>{
         dispatch(getCountries())
@@ -76,12 +80,20 @@ export default function Form(){
                 countries: [...lugares.countries, id.name]
             })
         }
+        const validationErrors= Validation({...lugares, countries:inputValue})
+        setErrors(validationErrors)
     }
 
     function handleSubmit(event){
         event.preventDefault()
-        dispatch(createActivity(lugares))
-        window.alert("Actividad creada exitosamente")
+
+        if(lugares.countries==="" || lugares.name==="" || lugares.duration === 0 || lugares.difficulty ===0, lugares.season===""){
+            window.alert("No se pudo crear la actividad")
+        }else{
+            dispatch(createActivity(lugares))
+            window.alert("Actividad creada exitosamente")
+            navigate("/home")//Luego de crear la actividad me redirije a Home   
+        } 
     }
    
     return(
@@ -142,6 +154,7 @@ export default function Form(){
                 </div>
                 
                 <button className={styles.boton} type="submit">Create</button>
+                
                 
             </div>
             

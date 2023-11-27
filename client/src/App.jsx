@@ -38,7 +38,7 @@ function App() {
   const location= useLocation()
   return (
     <div className='App'>
-      {location.pathname !== "/" && <Navbar onSearch={onSearch}/>}
+      {location.pathname !== "/" &&  location.pathname !=="/form" && <Navbar onSearch={onSearch}/>}
       <Routes>
         <Route path= "/" element={<Landing/>}/>
         <Route path= "/detail/:id" element={<Detail/>}/>

@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getCountries, getActivities } from "../../redux/actions";
+import { Link } from "react-router-dom";
+import { getCountries,clearCountries } from "../../redux/actions";
 import Country from "../Country/country";
 import Filtros from "../Filtros/Filter";
 import styles from "./countries.module.css";
 
 export default function Countries() {
-  const [countryData, setCountryData] = useState([]);
   const [page, setPage] = useState(1);
-  const [activities, setActivities] = useState([]);
   const [loading, setLoading] = useState(true); // Nuevo estado para indicar carga
   const allCountries = useSelector((state) => state.filtered);
+  const [forceUpdate, setForceUpdate] = useState(false);
+
 
   const dispatch = useDispatch();
   const PaisesPorPag = 10;
@@ -20,12 +21,13 @@ export default function Countries() {
     dispatch(getCountries())
       .then(() => setLoading(false)) // Marcar como cargado cuando la petición se complete
       .catch(() => setLoading(false)); // En caso de error también se marca como cargado
-  }, [dispatch]);
+      setForceUpdate(false)
+  }, [dispatch,forceUpdate]);
 
-  useEffect(() => {
-    // Hacer la petición para obtener las actividades
-    dispatch(getActivities());
-  }, [dispatch]);
+  const handleClick=()=>{
+    dispatch(clearCountries())
+    setForceUpdate(true);
+  }
 
   const indexOfLastCountry = page * PaisesPorPag;
   const indexOfFirstCountry = indexOfLastCountry - PaisesPorPag;
@@ -51,7 +53,7 @@ export default function Countries() {
       {loading && <span className={styles.loader}></span>}
       {!loading && (
         <div className={styles.FlexContainer}>
-          <Filtros activities={activities} setActivities={setActivities} />
+          <Filtros/>
           {current.map((element) => (
             <Country
               key={element.id}
@@ -84,6 +86,11 @@ export default function Countries() {
           >
             Next
           </button>
+          <ul>
+            <button className={styles.botonHome} onClick={handleClick}>
+              <Link to="/home">Home</Link>
+            </button>
+          </ul>
         </div>
       )}
     </div>

@@ -1,4 +1,4 @@
-import { GET_ACTIVITIES, GET_COUNTRIES,COUNTRY_ID, FILTER_ACTIVITIES,FILTER_CONTINENT,ORDER_BYNAME,ORDER_POPULATION, CREATE_ACTIVITY } from "./actions";
+import { GET_ACTIVITIES, GET_COUNTRIES,COUNTRY_ID, FILTER_ACTIVITIES,FILTER_CONTINENT,ORDER_BYNAME,ORDER_POPULATION, CREATE_ACTIVITY, CLEAR_COUNTRIES } from "./actions";
 
 const initialState={
     filtered:[],
@@ -16,6 +16,10 @@ const reducer = (state = initialState, action)=>{
                 countriess: action.payload,
                 filtered: action.payload,
               
+            }
+        case CLEAR_COUNTRIES:
+            return{
+                ...state, filtered:[]
             }
 
         case COUNTRY_ID:

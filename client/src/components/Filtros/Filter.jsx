@@ -75,19 +75,14 @@ export default function Filtros(){
             </div>
             <div className={styles.filtrar}>
                 <label className={styles.subt} htmlFor="cantidadPoblacion">Population:</label>
-                <select id="cantidadPoblacion" onChange={e=>handleOrderPopulation(e)}>
-                    {/* <option value="Ascendente">A-Z</option>
-                    <option value="Descendente">Z-A</option> */}
-                     <option value="Ascendente">A-Z</option>
+                <select className={styles.pop}id="cantidadPoblacion" onChange={e=>handleOrderPopulation(e)}>
+                    <option value="Ascendente">A-Z</option>
                     <option value="Descendente">Z-A</option>
                 </select>
             </div>
         </div>
         
     )
-
-
-
 }
 
 

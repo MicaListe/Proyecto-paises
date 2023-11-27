@@ -57,6 +57,19 @@
   color:black;
   height: 35px;
 }
+.botonHome{
+  position: relative;
+  top: 15px;
+  left: 1330px ;
+  height: 39px;
+  border: 2px solid;
+  /* background-color: rgb(247, 245, 245); */
+  background-color: transparent;
+  border: 1px solid black;
+  z-index:1;
+  z-index: 1000;
+  position: fixed; ;
+}
 
 
 .loader {

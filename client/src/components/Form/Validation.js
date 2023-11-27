@@ -4,6 +4,7 @@ export default function Validation(inputs) {
     const regexDificulty = /^[0-9]+$/;
     const regexDuration = /^[0-9]+(\.[0-9]+)?$/;
     const regexSeason = /^[A-Z][a-zA-Z]{4,8}$/;
+    const regexCountries= /^[a-zA-Z]$/
 
     const errors = {};
 
@@ -51,6 +52,14 @@ export default function Validation(inputs) {
     //         errors.season = '';
     //     }
     // }
+
+    if(!regexCountries || typeof inputs.countries !== "string"){
+        errors.countries= "Countries is required"
+    }else if (!regexDuration.test(inputs.countries)) {
+        errors.duration = 'Countries is invalid';
+    } else {
+        errors.duration = '';
+    }
 
     return errors;
 }

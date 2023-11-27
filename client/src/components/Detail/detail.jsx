@@ -17,7 +17,7 @@ export default function Detail(){
 
     useEffect(()=>{
         dispatch(getCountriesID(id))
-    },[dispatch,id])
+    },[dispatch,id]) //sirve para saber cuando el efecto debe ejectutarse. Cuando el valor cambia es emitido a la accion
 
     return (
         <div className={styles.container} >

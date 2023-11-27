@@ -15,20 +15,20 @@
     z-index: 1000;
 }
 
-.botonHome{
+.botonForm{
     position: relative;
-    top: -38px;
-    left: 300px ;
+    top: -36px;
+    left: 450px ;
     height: 39px;
     border: 2px solid;
-    /* background-color: rgb(247, 245, 245); */
+    color: white;
     background-color: transparent;
     border: 1px solid black
 }
-.botonForm{
+.botonSalir{
     position: relative;
-    top: -93px;
-    left: 450px ;
+    top: -90px;
+    left: 590px ;
     height: 39px;
     border: 2px solid;
     color: white;
