@@ -8,7 +8,7 @@ import axios from "axios"
 import Countries from '../src/components/Countries/countries'
 import Form from "../src/components/Form/form"
 
-axios.defaults.baseURL = "http://proyecto-paises-production.up.railway.app"
+axios.defaults.baseURL = "http://localhost:3001"
 
 function App() {
   const [paises,setPaises]= useState([])
