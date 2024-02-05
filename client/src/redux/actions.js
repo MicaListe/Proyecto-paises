@@ -11,7 +11,7 @@ export const CLEAR_COUNTRIES= "CLEAR_COUNTRIES"
 
 export function getCountries(){
     return async function (dispatch){
-        let json= await axios ("http://localhost:3001/countries")
+        let json= await axios ("/countries")
         return dispatch({
             type: "GET_COUNTRIES",
             payload: json.data
@@ -27,7 +27,7 @@ export function clearCountries(){
 
 export function getCountriesID(id){
     return async function(dispatch){
-        let json= await axios(`http://localhost:3001/countries/${id}`)
+        let json= await axios(`/countries/${id}`)
         console.log("josn", json)
         return dispatch({
             type: COUNTRY_ID, 
@@ -52,7 +52,7 @@ export const filter_activities=(act)=>{
 export function getActivities(){
     return async function(dispatch){
         try{
-            const act= await axios.get(`http://localhost:3001/activities-activity`)
+            const act= await axios.get(`/activities-activity`)
             return dispatch({
                 type: GET_ACTIVITIES,
                 payload: act.data
@@ -79,7 +79,7 @@ export const order_population=(population)=>{
 
 export const createActivity=(lugares)=>{
     return async function(){
-        const json= await axios.post("http://localhost:3001/activities", lugares)
+        const json= await axios.post("/activities", lugares)
         return json
     }  
 }

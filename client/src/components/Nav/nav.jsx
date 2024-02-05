@@ -1,4 +1,4 @@
-import SearchBar from "../SearchBar/SearchBar";
+import SearchBar from "../searchBar/searchBar";
 import {Link} from "react-router-dom"
 import styles from "./nav.module.css"
 import { clearCountries } from "../../redux/actions";

@@ -8,6 +8,8 @@ import axios from "axios"
 import Countries from '../src/components/Countries/countries'
 import Form from "../src/components/Form/form"
 
+axios.defaults.baseURL = "http://localhost:3001"
+
 function App() {
   const [paises,setPaises]= useState([])
   const navigate= useNavigate()
@@ -15,7 +17,7 @@ function App() {
   async function onSearch(name){
     try{
       const lowerCaseName= name.toLowerCase()
-      const response= await axios.get(`http://localhost:3001/countries-name?name=${lowerCaseName}`)
+      const response= await axios.get(`/countries-name?name=${lowerCaseName}`)
 
       if(response.data.length >0){
         const countryName= response.data[0].name.toLowerCase()
