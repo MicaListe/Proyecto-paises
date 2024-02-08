@@ -4,7 +4,7 @@ const { conn } = require('./src/db.js');
 require("dotenv").config()
 // const syncApiDb= require("./src/controllers/apiDB.js")
 
-conn.sync( false).then(async() => {
+conn.sync(false).then(async() => {
 // await syncApiDb()
 server.listen(process.env.PORT, () => {
   console.log('Server listening on port', process.env.PORT);

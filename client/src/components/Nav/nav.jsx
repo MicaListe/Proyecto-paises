@@ -22,6 +22,11 @@ export default function Navbar({onSearch}){
                     </button>
                 </ul>
                 <ul>
+                    <button className={styles.botonHome}>
+                        <Link to="/home">Home</Link>
+                    </button>
+                </ul>
+                <ul>
                     <button className={styles.botonSalir}>
                         <Link to="/">Log out</Link>
                     </button>

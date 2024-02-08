@@ -69,7 +69,7 @@ export default function Detail(){
                     </ul>
                </div> 
             )}
-           
         </div>
+        
     )
 }

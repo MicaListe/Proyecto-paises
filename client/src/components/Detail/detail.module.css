@@ -2,8 +2,8 @@
 .card {
   position: absolute;
   right: 200px;
-  width: 290px;
-  height: 470px;
+  width: 350px;
+  height: 520px;
   border-radius: 20px;
   background: #f5f5f5;
   position: relative;
@@ -14,7 +14,6 @@
   overflow: visible;
   z-index: 1;
   background-image: url("../Country/verde.jpg");
- 
 }
 
 .cardDetails {
@@ -137,24 +136,24 @@
   height: 270px;
   /* top:400px; */
   left:-650px;
-  top:-150px;
+  top:-135px;
 }
 .hojas{
   position: absolute;
-  left:690px;
-  top:190px;
+  left:709px;
+  top:240px;
   height: 700px;
 }
 .maleta{
   position: absolute;
   height: 300px;
-  top:470px;
+  top:505px;
   left:450px;
 }
 .palmera{
   position: absolute;
   height: 400px;
-  left:955px;
+  left:984px;
   top:-200px
 }
 
@@ -164,4 +163,17 @@
 .actividades{
   align-items: center;
   justify-content: center;
+}
+.back{
+  position: absolute;
+  border: 2px solid;
+  color: black;
+  background-color: transparent;
+  border: 1px solid black
+}
+.botonForm{
+  position: relative;
+  top: -36px;
+  left: 450px ;
+  height: 39px;
 }
