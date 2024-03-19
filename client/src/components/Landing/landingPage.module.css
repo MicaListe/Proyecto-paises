@@ -116,4 +116,60 @@
     }
     
 }
-
+@media(max-width:895px){
+    .paises{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .img{ /*imagen paises*/
+        transform: rotate(90deg);
+        margin-left: 10%;
+        z-index: 1;
+        position: absolute;
+        height: 40vh;
+        top: 10vh;
+    }
+    .image{ /*Nube paises */
+        position: absolute;
+        transform: rotate(190deg);
+        height: 40vh;
+        margin-left:-10%;
+        width:50vh;
+        margin-top:-63vh;
+    }
+    .boton{
+        position: absolute;
+        z-index:1;
+        top: 81vh;
+        right:29vh;
+        transform: translate(-50%, -50%);
+        background-color: rgb(220, 225, 225);
+    }
+    .ima{ /*Nube arriba esquina */
+        position: absolute;
+        height: 30vh;
+        left:-15vh;
+        top:-10vh;
+    }
+    .im{ /* nube boton */
+        position: absolute;
+        height: 15%;
+        left:25vh;
+        top:73vh
+    }
+    .titulo{
+        /* position: absolute; */
+        font-size: 3rem;
+        margin-top: 10rem;
+        /* left: 20vh; */
+        /* top: 35vh; */
+    }
+    .explicacion{
+        font-size: 2rem;
+        max-width: 600px;
+        
+        margin: 0 auto;
+    }
+}
